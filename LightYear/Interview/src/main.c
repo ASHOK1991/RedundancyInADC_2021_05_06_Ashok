@@ -30,12 +30,12 @@ int main(int argc, char *argv[])
 
 while(1)
 {
-	/***As per the given graph deatails i have calculated angle and torque values for 0kmph***/
-	float y[7] = {0,18,35,50,62,82,103}; //--> 0kmph
+    /***As per the given graph deatails i have calculated angle and torque values for 0kmph***/
+    float y[7] = {0,18,35,50,62,82,103}; //--> 0kmph
     float x[7] = {0,3,6,9,12,18,24}; //--> 0kmph
     /*****************************************************************************************/
 
-	/***As per the given graph deatails i have calculated angle and torque values for 50kmph***/
+    /***As per the given graph deatails i have calculated angle and torque values for 50kmph***/
     //float y[8] = {-30,-10,10,30,45,72,95,120}; //--> 50kmph
     //float x[8] = {0,3,6,9,12,18,24,30}; //--> 50kmph
     /******************************************************************************************/
