@@ -1,0 +1,35 @@
+/**
+@mainpage Interview case
+I have did as per the given inputs like Torque and vehicle speed.
+
+/*******************************************************************************/
+@section design Design explanation
+I have designed the block low level design diagram 
+	1. Inputs -> 2 ADC channells (ADC Channel0 and ADC Channel1)
+	2. Calculate Moving avrage and calculate the Throttle pedal angle from user inputs
+	3. Calculate Torque as per the throttel pedal angle
+
+Please refer the image: -> \doc
+HighLevel_Design.PNG
+
+/*******************************************************************************/
+Describe what you did here.
+	1. I have received 2 adc values from user input(Throttle pedal -> 2 ADC channels)
+	2. After receving the ADC values calculated angle based on the received ADC values and calculate moving average
+	3. Calculate torque as per the throttle pedal angle
+	4. Check the below mentioned conditions and print the all details and LED also blink if anything goes wrong
+		a. If Throttle pedel angle exceed 30degree -> Indimate where the mistakes are happened and indicate -> LED ON
+		b. If any ADC channel(ADCCHANNEL0 or ADCCHANNEL1) fault (or) wrong value received from ADC channels -> LED ON
+	5. Final Torque calculated as per the angle and send it to the Motor
+
+Please refer the ouput screesnshots -> \doc
+0kmph_All_Scenario_Output.PNG
+50kmph_All_Scenario_Output.PNG
+/********************************************************************************/
+
+@section remarks Remarks and suggestions
+
+Any remarks, suggestions or things that you like to point out?
+The inputs was clearly mentioned
+
+*/
