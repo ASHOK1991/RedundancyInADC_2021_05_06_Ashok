@@ -44,13 +44,14 @@ while(1)
 	scanf("%d",&adc_value_1);
 	/************************************/
 
-	/************ADC1 value calculate*************/
-  	adc0 = (0.5 + (0.1 * adc_value_0));
-	//ADC2 value calculate
+	/************ADC value calculate*************/
+  	//ADCCHANNEL0 value calculate
+        adc0 = (0.5 + (0.1 * adc_value_0));
+	//ADCCHANNEL1 value calculate
   	adc1 = (1.5 + (0.08 * adc_value_1));
-  	//Moving Avrage
-  	ma = ((temp + temp_1)/2);
-  	//convart to decimal
+  	//Find Moving Avrage
+  	ma = ((adc0 + adc1)/2);
+  	//Find Throttle Pedal Angle
   	angle = ma;
 	/********************************************/ 
 
