@@ -20,13 +20,12 @@ int main(int argc, char *argv[])
   adc_init(ADC_CHANNEL1);
   int adc_value_0;
   int adc_value_1;
-  float temp;
-  float temp_1;
+  float adc0;
+  float adc1;
   float ma;
+  int angle;
   int i,j,n=7;
-  int m=5;
-  float a;
-  float s = 1, t =1, k=0;
+  float s = 1, t =1, ft=0;
 
 while(1)
 {
@@ -46,24 +45,24 @@ while(1)
 	/************************************/
 
 	/************ADC1 value calculate*************/
-  	temp = (0.5 + (0.1 * adc_value_0));
+  	adc0 = (0.5 + (0.1 * adc_value_0));
 	//ADC2 value calculate
-  	temp_1 = (1.5 + (0.08 * adc_value_1));
+  	adc1 = (1.5 + (0.08 * adc_value_1));
   	//Moving Avrage
   	ma = ((temp + temp_1)/2);
   	//convart to decimal
-  	int ma_1 = ma;
+  	angle = ma;
 	/********************************************/ 
 
   	/**********Display the ADC value from user input****************/
-  	printf("ADC1= %f\n",temp);
-	printf("ADC2= %f\n",temp_1);
-	printf("MA(Angle)= %f\n",ma);
-	printf("MA_1(Angle)= %d\n",ma_1);
+  	printf("ADC1= %f\n",adc);
+	printf("ADC2= %f\n",adc1);
+	printf("Moving Average = %f\n",ma);
+	printf("Pedal Angle = %d\n",angle);
 	/***************************************************************/
 
 	/******************Conditions -> If Throttle pedel angle exceed 30degree******************/
-	if (ma >= 30)
+	if (angle >= 30)
 		{
 		printf("Pedal Angle value is wrong and below mentioned ADC channel is fault\n");
 		
@@ -129,15 +128,15 @@ while(1)
 		{
 			if (j!=i)
 			{
-				s=s*(ma_1-x[j]);
+				s=s*(angle-x[j]);
 				t=t*(x[i]-x[j]);
 			}
 		}
-			k = k+((s/t)*y[i]);
+			ft = ft+((s/t)*y[i]);
 	}
 
-	printf("Final Torque = %f\n", k);
-	s=0; t=1; i=0; j=0; k=0; n=7;
+	printf("Final Torque = %f\n", ft);
+	s=0; t=1; i=0; j=0; ft=0; n=7;
 	/**********************************************************************/
 }
 }
