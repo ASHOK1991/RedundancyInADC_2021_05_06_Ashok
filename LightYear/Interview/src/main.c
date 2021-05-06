@@ -10,7 +10,6 @@
 #include "drivers/adc_driver/adc_driver.h"
 #include "drivers/error_led/error_led.h"
 
-
 int main(int argc, char *argv[]) 
 {
   adc_value_t value = 0;
@@ -24,7 +23,9 @@ int main(int argc, char *argv[])
   float adc1;
   float ma;
   int angle;
-  int i,j,n=7;
+  int i,j;
+  int n=7; //0kmph
+  //int n=8; //50kmph
   float s = 1, t =1, ft=0;
 
 while(1)
@@ -46,17 +47,17 @@ while(1)
 
 	/************ADC value calculate*************/
   	//ADCCHANNEL0 value calculate
-        adc0 = (0.5 + (0.1 * adc_value_0));
+    adc0 = (0.5 + (0.1 * adc_value_0));
 	//ADCCHANNEL1 value calculate
   	adc1 = (1.5 + (0.08 * adc_value_1));
   	//Find Moving Avrage
   	ma = ((adc0 + adc1)/2);
   	//Find Throttle Pedal Angle
-  	angle = ma;
+  	angle = (int)ma;
 	/********************************************/ 
 
   	/**********Display the ADC value from user input****************/
-  	printf("ADC1= %f\n",adc);
+  	printf("ADC1= %f\n",adc0);
 	printf("ADC2= %f\n",adc1);
 	printf("Moving Average = %f\n",ma);
 	printf("Pedal Angle = %d\n",angle);
