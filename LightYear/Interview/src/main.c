@@ -47,7 +47,7 @@ while(1)
 
 	/************ADC value calculate*************/
   	//ADCCHANNEL0 value calculate
-    adc0 = (0.5 + (0.1 * adc_value_0));
+    	adc0 = (0.5 + (0.1 * adc_value_0));
 	//ADCCHANNEL1 value calculate
   	adc1 = (1.5 + (0.08 * adc_value_1));
   	//Find Moving Avrage
